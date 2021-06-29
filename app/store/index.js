@@ -115,7 +115,7 @@ export default new Vuex.Store({
                     redirect: 'follow'
                 };
 
-                fetch(`https://restapicoursework.herokuapp.com/lessons/${item._id}`, requestOptions)
+                fetch(`https://renuabackend.herokuapp.com/lessons/${item._id}`, requestOptions)
                     .then(response => response.text())
                     .then(result => console.log(result))
                     .catch(error => console.log('error', error));

@@ -2,7 +2,7 @@
   <GridLayout>
     <Span v-for="(error, index) in errors" :key="index" :text="error" color="red"></Span>
     <TextField @blur="validate" v-model="name" hint="Enter your name" />
-    <TextField @blur="validate" v-model="name" hint="Enter your name" />
+    <TextField @blur="validate" v-model="phone" hint="Enter your phone" />
     <Button v-show="valid" @tap="$emit('confirmed')">Checkout</Button>
   </GridLayout>
 </template>

@@ -1,22 +1,29 @@
 <template>
     <Page>
         <ActionBar>
-            <Label text="Home"/>
+            <Label text="Vue Lessons"/>
         </ActionBar>
 
         <GridLayout>
-            <Label class="info">
-                <FormattedString>
-                    <Span class="fas" text.decode="&#xf135; "/>
-                    <Span :text="message"/>
-                </FormattedString>
-            </Label>
+            <TabView :selectedIndex="selectedIndex" @selectedIndexChange="indexChange">
+                <TabViewItem title="Lessons">
+                    <Lessons />
+                </TabViewItem>
+                <TabViewItem title="Checkout">
+                    <Checkout />
+                </TabViewItem>
+            </TabView>
+            <Lessons />
+            <Checkout />
         </GridLayout>
     </Page>
 </template>
 
 <script>
+import Checkout from './components/Checkout.vue';
+import Lessons from './views/Lessons.vue';
   export default {
+  components: { Lessons, Checkout },
     computed: {
       message() {
         return "Vue Lessons";
